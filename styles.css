@@ -839,13 +839,13 @@ body {
 /* Móviles grandes y tablets pequeñas */
 @media (max-width: 768px) {
     :root {
-        --space-lg: 1.5rem;
-        --space-xl: 2.5rem;
-        --space-xxl: 3rem;
+        --space-lg: 1.25rem;
+        --space-xl: 2rem;
+        --space-xxl: 2.5rem;
     }
     
     body {
-        font-size: 16px;
+        font-size: 14px;
     }
     
     /* Header móvil */
@@ -863,24 +863,24 @@ body {
     }
     
     .logo h1 {
-        font-size: 1.1rem;
-        letter-spacing: 0.1em;
+        font-size: 0.9rem;
+        letter-spacing: 0.08em;
     }
     
     .logo-icon {
-        width: 35px;
-        height: 35px;
+        width: 28px;
+        height: 28px;
     }
     
     .nav {
-        gap: var(--space-sm);
+        gap: var(--space-xs);
         flex-wrap: wrap;
         justify-content: center;
     }
     
     .nav-link {
-        font-size: 0.7rem;
-        padding: var(--space-xs) var(--space-sm);
+        font-size: 0.6rem;
+        padding: 2px var(--space-xs);
     }
     
     /* Hero móvil */
@@ -896,14 +896,14 @@ body {
     }
     
     .hero-title {
-        font-size: 1.6rem;
-        letter-spacing: 0.05em;
-        margin-bottom: var(--space-md);
+        font-size: 1.3rem;
+        letter-spacing: 0.03em;
+        margin-bottom: var(--space-sm);
     }
     
     .hero-subtitle {
-        font-size: 0.95rem;
-        line-height: 1.6;
+        font-size: 0.8rem;
+        line-height: 1.5;
     }
     
     .floating-symbols .symbol {
@@ -913,56 +913,56 @@ body {
     
     /* Calculadora móvil */
     .section-header h2 {
-        font-size: 1.4rem;
-        letter-spacing: 0.05em;
+        font-size: 1.1rem;
+        letter-spacing: 0.03em;
     }
     
     .section-header p {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
     }
     
     .birth-form {
         padding: var(--space-md);
-        border-radius: 12px;
+        border-radius: 10px;
     }
     
     .form-grid {
         grid-template-columns: 1fr;
-        gap: var(--space-md);
-        margin-bottom: var(--space-lg);
+        gap: var(--space-sm);
+        margin-bottom: var(--space-md);
     }
     
     .form-group label {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
     }
     
     .form-group input {
-        font-size: 16px !important;
-        padding: 12px 14px;
+        font-size: 14px !important;
+        padding: 10px 12px;
     }
     
     .form-hint {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
     
     .submit-btn {
-        padding: 14px var(--space-md);
-        font-size: 0.8rem;
-        letter-spacing: 0.1em;
+        padding: 12px var(--space-md);
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
     }
     
     /* Carta astral móvil */
     .chart-header h2 {
-        font-size: 1.2rem;
+        font-size: 1rem;
         word-break: break-word;
     }
     
     .chart-header p {
-        font-size: 0.85rem;
+        font-size: 0.7rem;
     }
     
     .chart-grid {
-        gap: var(--space-lg);
+        gap: var(--space-md);
     }
     
     .chart-wheel-container {
@@ -972,273 +972,295 @@ body {
     
     .chart-wheel {
         width: 100%;
-        max-width: 320px;
+        max-width: 280px;
     }
     
     /* Big Three móvil */
     .big-three {
-        padding: var(--space-md);
-        border-radius: 10px;
+        padding: var(--space-sm);
+        border-radius: 8px;
     }
     
     .big-three h3 {
-        font-size: 0.9rem;
-        margin-bottom: var(--space-md);
+        font-size: 0.75rem;
+        margin-bottom: var(--space-sm);
     }
     
     .big-three-grid {
         grid-template-columns: 1fr;
-        gap: var(--space-sm);
+        gap: 6px;
     }
     
     .big-three-item {
         flex-direction: row;
         justify-content: flex-start;
         text-align: left;
-        padding: var(--space-sm) var(--space-md);
-        gap: var(--space-md);
+        padding: 8px 10px;
+        gap: var(--space-sm);
     }
     
     .big-three-item .planet-symbol {
-        font-size: 1.8rem;
-        min-width: 40px;
+        font-size: 1.3rem;
+        min-width: 30px;
     }
     
     .big-three-item .planet-label {
-        font-size: 0.65rem;
+        font-size: 0.55rem;
     }
     
     .big-three-item .sign-name {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
     }
     
     /* Lista de planetas móvil */
     .planets-list {
-        padding: var(--space-md);
-        border-radius: 10px;
+        padding: var(--space-sm);
+        border-radius: 8px;
     }
     
     .planets-list h3 {
-        font-size: 0.9rem;
-        margin-bottom: var(--space-md);
+        font-size: 0.75rem;
+        margin-bottom: var(--space-sm);
     }
     
     .planets-grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-xs);
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
     }
     
     .planet-item {
-        padding: var(--space-sm) var(--space-md);
+        padding: 6px 8px;
     }
     
     .planet-item .symbol {
-        font-size: 1.2rem;
-        min-width: 28px;
+        font-size: 1rem;
+        min-width: 22px;
     }
     
     .planet-item .name {
-        font-size: 0.7rem;
+        font-size: 0.55rem;
     }
     
     .planet-item .position {
-        font-size: 0.8rem;
+        font-size: 0.65rem;
     }
     
     /* Interpretación móvil */
     .interpretation-section h3 {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
     }
     
     .interpretation-content {
         grid-template-columns: 1fr;
-        gap: var(--space-md);
+        gap: var(--space-sm);
     }
     
     .interpretation-card {
-        padding: var(--space-md);
-        border-radius: 10px;
+        padding: var(--space-sm);
+        border-radius: 8px;
     }
     
     .interpretation-card h4 {
-        font-size: 0.95rem;
+        font-size: 0.75rem;
     }
     
     .interpretation-card p {
-        font-size: 0.85rem;
-        line-height: 1.6;
+        font-size: 0.7rem;
+        line-height: 1.5;
     }
     
     /* About móvil */
     .about-content h2 {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
     }
     
     .about-grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-md);
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-sm);
     }
     
     .about-card {
-        padding: var(--space-md);
-        border-radius: 10px;
+        padding: var(--space-sm);
+        border-radius: 8px;
     }
     
     .card-icon {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        margin-bottom: var(--space-xs);
     }
     
     .about-card h3 {
-        font-size: 1rem;
+        font-size: 0.75rem;
+        margin-bottom: var(--space-xs);
     }
     
     .about-card p {
-        font-size: 0.85rem;
+        font-size: 0.65rem;
     }
     
     /* Footer móvil */
     .footer {
-        padding: var(--space-lg) var(--space-md);
+        padding: var(--space-md) var(--space-sm);
     }
     
     .footer-text {
-        font-size: 0.9rem;
-        letter-spacing: 0.15em;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
     }
     
     .footer-subtitle {
-        font-size: 0.8rem;
+        font-size: 0.65rem;
     }
     
     /* Loading móvil */
     .loading-content {
-        padding: var(--space-md);
+        padding: var(--space-sm);
         width: 90%;
     }
     
     .loading-spinner {
-        width: 70px;
-        height: 70px;
-        margin-bottom: var(--space-lg);
+        width: 50px;
+        height: 50px;
+        margin-bottom: var(--space-md);
     }
     
     .loading-title {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
     }
     
     .loading-subtitle {
-        font-size: 0.85rem;
+        font-size: 0.7rem;
     }
     
     .loading-symbols {
-        gap: var(--space-xs);
+        gap: 4px;
     }
     
     .loading-symbols span {
-        font-size: 1rem;
+        font-size: 0.85rem;
     }
 }
 
 /* Móviles pequeños */
 @media (max-width: 480px) {
     :root {
-        --space-md: 0.75rem;
-        --space-lg: 1rem;
-        --space-xl: 2rem;
-        --space-xxl: 2.5rem;
+        --space-sm: 0.4rem;
+        --space-md: 0.6rem;
+        --space-lg: 0.9rem;
+        --space-xl: 1.5rem;
+        --space-xxl: 2rem;
+    }
+    
+    body {
+        font-size: 13px;
     }
     
     .hero {
-        padding-top: 110px;
+        padding-top: 90px;
     }
     
     .hero-title {
-        font-size: 1.4rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 0.85rem;
-    }
-    
-    .floating-symbols .symbol {
-        font-size: 1rem;
-        opacity: 0.2;
-    }
-    
-    .section-header h2 {
-        font-size: 1.2rem;
-    }
-    
-    .section-header p {
-        font-size: 0.8rem;
-    }
-    
-    .birth-form {
-        padding: var(--space-md);
-        border-radius: 10px;
-    }
-    
-    .form-group input {
-        padding: 10px 12px;
-        font-size: 16px !important;
-        border-radius: 8px;
-    }
-    
-    .submit-btn {
-        padding: 12px;
-        font-size: 0.75rem;
-        gap: var(--space-sm);
-        border-radius: 8px;
-    }
-    
-    .btn-icon {
-        font-size: 0.9rem;
-    }
-    
-    .chart-wheel {
-        max-width: 260px;
-    }
-    
-    .chart-header h2 {
         font-size: 1.1rem;
     }
     
-    .chart-header p {
+    .hero-subtitle {
+        font-size: 0.7rem;
+    }
+    
+    .floating-symbols .symbol {
+        font-size: 0.9rem;
+        opacity: 0.15;
+    }
+    
+    .section-header h2 {
+        font-size: 0.95rem;
+    }
+    
+    .section-header p {
+        font-size: 0.65rem;
+    }
+    
+    .form-group input {
+        padding: 8px 10px;
+        font-size: 14px !important;
+        border-radius: 6px;
+    }
+    
+    .submit-btn {
+        padding: 10px;
+        font-size: 0.65rem;
+        gap: 6px;
+        border-radius: 6px;
+    }
+    
+    .btn-icon {
         font-size: 0.8rem;
+    }
+    
+    .chart-wheel {
+        max-width: 240px;
+    }
+    
+    .chart-header h2 {
+        font-size: 0.85rem;
+    }
+    
+    .chart-header p {
+        font-size: 0.6rem;
     }
     
     .big-three-item .planet-symbol {
-        font-size: 1.5rem;
-        min-width: 35px;
+        font-size: 1.1rem;
+        min-width: 25px;
+    }
+    
+    .big-three-item .sign-name {
+        font-size: 0.65rem;
+    }
+    
+    .planet-item .symbol {
+        font-size: 0.85rem;
+    }
+    
+    .planet-item .name {
+        font-size: 0.5rem;
+    }
+    
+    .planet-item .position {
+        font-size: 0.55rem;
     }
     
     .about-content h2 {
-        font-size: 1.2rem;
-    }
-    
-    .about-card {
-        padding: var(--space-md);
+        font-size: 0.95rem;
     }
     
     .card-icon {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
     }
     
     .about-card h3 {
-        font-size: 0.9rem;
+        font-size: 0.65rem;
     }
     
     .about-card p {
-        font-size: 0.8rem;
+        font-size: 0.55rem;
+    }
+    
+    .interpretation-card h4 {
+        font-size: 0.65rem;
+    }
+    
+    .interpretation-card p {
+        font-size: 0.6rem;
     }
     
     /* Notificación de error móvil */
     .error-notification {
-        top: 70px;
-        padding: var(--space-sm) var(--space-md);
-        border-radius: 8px;
-        width: 90%;
-        left: 5%;
+        top: 60px;
+        padding: 6px 10px;
+        border-radius: 6px;
+        width: 92%;
+        left: 4%;
         transform: translateY(-20px);
     }
     
@@ -1247,65 +1269,86 @@ body {
     }
     
     .error-icon {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     
     .error-message {
-        font-size: 0.8rem;
+        font-size: 0.65rem;
     }
     
     .loading-spinner {
-        width: 60px;
-        height: 60px;
+        width: 45px;
+        height: 45px;
     }
     
     .loading-title {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
     
     .loading-subtitle {
-        font-size: 0.8rem;
+        font-size: 0.65rem;
+    }
+    
+    .footer-text {
+        font-size: 0.65rem;
+    }
+    
+    .footer-subtitle {
+        font-size: 0.55rem;
     }
 }
 
 /* Móviles muy pequeños */
 @media (max-width: 360px) {
+    body {
+        font-size: 12px;
+    }
+    
     .hero-title {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     
     .hero-subtitle {
-        font-size: 0.8rem;
+        font-size: 0.6rem;
     }
     
     .logo h1 {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
     
     .logo-icon {
-        width: 30px;
-        height: 30px;
+        width: 22px;
+        height: 22px;
     }
     
     .nav-link {
-        font-size: 0.65rem;
+        font-size: 0.5rem;
     }
     
     .chart-wheel {
-        max-width: 220px;
+        max-width: 200px;
     }
     
     .big-three-item .planet-symbol {
-        font-size: 1.3rem;
-        min-width: 30px;
+        font-size: 1rem;
+        min-width: 22px;
     }
     
     .section-header h2 {
-        font-size: 1.1rem;
+        font-size: 0.85rem;
     }
     
     .submit-btn {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
+        padding: 8px;
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .planets-grid {
+        grid-template-columns: 1fr;
     }
 }
 
