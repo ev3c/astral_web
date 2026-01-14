@@ -851,46 +851,41 @@ body {
         font-size: 11px;
     }
     
-    /* Header móvil */
+    /* Header móvil - compacto */
     .header {
-        padding: 6px 10px;
+        padding: 4px 8px;
     }
     
     .header-content {
-        flex-direction: column;
-        gap: 4px;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0;
     }
     
     .logo {
-        gap: 6px;
+        gap: 4px;
     }
     
     .logo h1 {
-        font-size: 0.65rem;
-        letter-spacing: 0.05em;
+        font-size: 0.55rem;
+        letter-spacing: 0.03em;
     }
     
     .logo-icon {
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
     }
     
+    /* Ocultar navegación en móvil */
     .nav {
-        gap: 8px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .nav-link {
-        font-size: 0.5rem;
-        padding: 2px 4px;
+        display: none;
     }
     
     /* Hero móvil */
     .hero {
         min-height: 100svh;
         min-height: 100dvh;
-        padding: 70px 10px var(--space-lg);
+        padding: 45px 10px var(--space-lg);
     }
     
     .hero::before {
@@ -1165,7 +1160,7 @@ body {
     }
     
     .hero {
-        padding-top: 55px;
+        padding-top: 35px;
     }
     
     .hero-title {
@@ -1339,36 +1334,8 @@ body {
         font-size: 0.38rem;
     }
     
-    .logo h1 {
-        font-size: 0.55rem;
-    }
-    
-    .logo-icon {
-        width: 16px;
-        height: 16px;
-    }
-    
-    .nav-link {
-        font-size: 0.42rem;
-    }
-}
-
-/* Móviles muy pequeños */
-@media (max-width: 360px) {
-    body {
-        font-size: 9px;
-    }
-    
-    .hero {
-        padding-top: 50px;
-    }
-    
-    .hero-title {
-        font-size: 0.7rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 0.4rem;
+    .header {
+        padding: 3px 6px;
     }
     
     .logo h1 {
@@ -1379,9 +1346,37 @@ body {
         width: 14px;
         height: 14px;
     }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 360px) {
+    body {
+        font-size: 9px;
+    }
     
-    .nav-link {
-        font-size: 0.38rem;
+    .hero {
+        padding-top: 28px;
+    }
+    
+    .hero-title {
+        font-size: 0.7rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.4rem;
+    }
+    
+    .header {
+        padding: 2px 5px;
+    }
+    
+    .logo h1 {
+        font-size: 0.42rem;
+    }
+    
+    .logo-icon {
+        width: 12px;
+        height: 12px;
     }
     
     .chart-wheel {
