@@ -49,6 +49,11 @@
     padding: 0;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -60,7 +65,8 @@ body {
     color: var(--color-starlight);
     background: var(--color-void);
     min-height: 100vh;
-    overflow-x: hidden;
+    min-height: 100dvh;
+    position: relative;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
@@ -137,8 +143,9 @@ body {
     right: 0;
     z-index: 100;
     padding: var(--space-md) var(--space-lg);
-    background: linear-gradient(180deg, var(--color-void) 0%, transparent 100%);
+    background: linear-gradient(180deg, var(--color-void) 0%, rgba(10, 10, 18, 0.9) 80%, transparent 100%);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .header-content {
@@ -216,6 +223,8 @@ body {
 .main {
     position: relative;
     z-index: 1;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
@@ -224,12 +233,14 @@ body {
 
 .hero {
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: var(--space-xxl) var(--space-lg);
+    padding: var(--space-xxl) var(--space-md);
+    padding-top: 100px;
     position: relative;
     overflow: hidden;
 }
@@ -297,6 +308,7 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
+    overflow: hidden;
 }
 
 .symbol {
@@ -308,6 +320,7 @@ body {
     top: var(--y);
     animation: float 6s ease-in-out infinite;
     animation-delay: var(--delay);
+    will-change: transform;
 }
 
 @keyframes float {
@@ -320,9 +333,10 @@ body {
    ═══════════════════════════════════════════════════════════════════════ */
 
 .calculator-section {
-    padding: var(--space-xxl) var(--space-lg);
+    padding: var(--space-xxl) var(--space-md);
     max-width: 900px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .section-header {
@@ -383,13 +397,16 @@ body {
 
 .form-group input {
     font-family: var(--font-body);
-    font-size: 1.1rem;
+    font-size: 16px; /* Mínimo 16px para evitar zoom en iOS */
     padding: var(--space-md) var(--space-lg);
     background: rgba(10, 10, 18, 0.6);
     border: 1px solid rgba(212, 175, 55, 0.3);
     border-radius: 10px;
     color: var(--color-starlight);
     transition: all var(--transition-medium);
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .form-group input::placeholder {
@@ -466,8 +483,9 @@ body {
    ═══════════════════════════════════════════════════════════════════════ */
 
 .chart-section {
-    padding: var(--space-xxl) var(--space-lg);
+    padding: var(--space-xxl) var(--space-md);
     background: linear-gradient(180deg, transparent 0%, rgba(26, 26, 46, 0.5) 50%, transparent 100%);
+    width: 100%;
 }
 
 .chart-section.hidden {
@@ -477,6 +495,8 @@ body {
 .chart-container {
     max-width: 1400px;
     margin: 0 auto;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .chart-header {
@@ -516,7 +536,10 @@ body {
 
 .chart-wheel {
     width: 100%;
+    max-width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto;
     filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.2));
 }
 
@@ -664,7 +687,7 @@ body {
 
 .interpretation-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
     gap: var(--space-lg);
 }
 
@@ -703,12 +726,14 @@ body {
    ═══════════════════════════════════════════════════════════════════════ */
 
 .about-section {
-    padding: var(--space-xxl) var(--space-lg);
+    padding: var(--space-xxl) var(--space-md);
+    width: 100%;
 }
 
 .about-content {
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .about-content h2 {
@@ -723,7 +748,7 @@ body {
 
 .about-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: var(--space-lg);
 }
 
@@ -838,72 +863,67 @@ body {
     }
     
     .logo h1 {
-        font-size: 1.2rem;
-        letter-spacing: 0.15em;
+        font-size: 1.1rem;
+        letter-spacing: 0.1em;
     }
     
     .logo-icon {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
     }
     
     .nav {
-        gap: var(--space-md);
+        gap: var(--space-sm);
         flex-wrap: wrap;
         justify-content: center;
     }
     
     .nav-link {
-        font-size: 0.75rem;
-        padding: var(--space-xs) 0;
+        font-size: 0.7rem;
+        padding: var(--space-xs) var(--space-sm);
     }
     
     /* Hero móvil */
     .hero {
-        min-height: 100svh; /* Usa svh para móviles */
-        padding: calc(var(--space-xxl) + 60px) var(--space-md) var(--space-xl);
+        min-height: 100svh;
+        min-height: 100dvh;
+        padding: 120px var(--space-md) var(--space-xl);
     }
     
     .hero::before {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
     }
     
     .hero-title {
-        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        font-size: 1.6rem;
         letter-spacing: 0.05em;
         margin-bottom: var(--space-md);
     }
     
     .hero-subtitle {
-        font-size: 1rem;
-        line-height: 1.7;
-        padding: 0 var(--space-sm);
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
     
     .floating-symbols .symbol {
-        font-size: 1.3rem;
-        opacity: 0.3;
+        font-size: 1.2rem;
+        opacity: 0.25;
     }
     
     /* Calculadora móvil */
-    .calculator-section {
-        padding: var(--space-xl) var(--space-md);
-    }
-    
     .section-header h2 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         letter-spacing: 0.05em;
     }
     
     .section-header p {
-        font-size: 0.95rem;
-        padding: 0 var(--space-sm);
+        font-size: 0.9rem;
     }
     
     .birth-form {
-        padding: var(--space-lg);
-        border-radius: 15px;
+        padding: var(--space-md);
+        border-radius: 12px;
     }
     
     .form-grid {
@@ -913,35 +933,36 @@ body {
     }
     
     .form-group label {
-        font-size: 0.8rem;
-    }
-    
-    .form-group input {
-        font-size: 1rem;
-        padding: var(--space-md);
-    }
-    
-    .form-hint {
         font-size: 0.75rem;
     }
     
+    .form-group input {
+        font-size: 16px !important;
+        padding: 12px 14px;
+    }
+    
+    .form-hint {
+        font-size: 0.7rem;
+    }
+    
     .submit-btn {
-        padding: var(--space-md) var(--space-lg);
-        font-size: 0.85rem;
-        letter-spacing: 0.15em;
+        padding: 14px var(--space-md);
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
     }
     
     /* Carta astral móvil */
-    .chart-section {
-        padding: var(--space-xl) var(--space-md);
-    }
-    
     .chart-header h2 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+        word-break: break-word;
     }
     
     .chart-header p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+    }
+    
+    .chart-grid {
+        gap: var(--space-lg);
     }
     
     .chart-wheel-container {
@@ -950,33 +971,37 @@ body {
     }
     
     .chart-wheel {
-        max-width: 350px;
-        margin: 0 auto;
-        display: block;
+        width: 100%;
+        max-width: 320px;
     }
     
     /* Big Three móvil */
     .big-three {
         padding: var(--space-md);
-        border-radius: 12px;
+        border-radius: 10px;
     }
     
     .big-three h3 {
-        font-size: 1rem;
+        font-size: 0.9rem;
         margin-bottom: var(--space-md);
     }
     
     .big-three-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr;
         gap: var(--space-sm);
     }
     
     .big-three-item {
-        padding: var(--space-sm);
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+        padding: var(--space-sm) var(--space-md);
+        gap: var(--space-md);
     }
     
     .big-three-item .planet-symbol {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+        min-width: 40px;
     }
     
     .big-three-item .planet-label {
@@ -984,23 +1009,23 @@ body {
     }
     
     .big-three-item .sign-name {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
     
     /* Lista de planetas móvil */
     .planets-list {
         padding: var(--space-md);
-        border-radius: 12px;
+        border-radius: 10px;
     }
     
     .planets-list h3 {
-        font-size: 1rem;
+        font-size: 0.9rem;
         margin-bottom: var(--space-md);
     }
     
     .planets-grid {
         grid-template-columns: 1fr;
-        gap: var(--space-sm);
+        gap: var(--space-xs);
     }
     
     .planet-item {
@@ -1008,21 +1033,21 @@ body {
     }
     
     .planet-item .symbol {
-        font-size: 1.3rem;
-        min-width: 25px;
+        font-size: 1.2rem;
+        min-width: 28px;
     }
     
     .planet-item .name {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
     
     .planet-item .position {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
     
     /* Interpretación móvil */
     .interpretation-section h3 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     
     .interpretation-content {
@@ -1032,25 +1057,21 @@ body {
     
     .interpretation-card {
         padding: var(--space-md);
-        border-radius: 12px;
+        border-radius: 10px;
     }
     
     .interpretation-card h4 {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     
     .interpretation-card p {
-        font-size: 0.9rem;
-        line-height: 1.7;
+        font-size: 0.85rem;
+        line-height: 1.6;
     }
     
     /* About móvil */
-    .about-section {
-        padding: var(--space-xl) var(--space-md);
-    }
-    
     .about-content h2 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
     
     .about-grid {
@@ -1059,20 +1080,20 @@ body {
     }
     
     .about-card {
-        padding: var(--space-lg);
-        border-radius: 12px;
+        padding: var(--space-md);
+        border-radius: 10px;
     }
     
     .card-icon {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     
     .about-card h3 {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     .about-card p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
     
     /* Footer móvil */
@@ -1081,38 +1102,40 @@ body {
     }
     
     .footer-text {
-        font-size: 1rem;
-        letter-spacing: 0.2em;
+        font-size: 0.9rem;
+        letter-spacing: 0.15em;
     }
     
     .footer-subtitle {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
     
     /* Loading móvil */
     .loading-content {
-        padding: var(--space-lg);
+        padding: var(--space-md);
+        width: 90%;
     }
     
     .loading-spinner {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
+        margin-bottom: var(--space-lg);
     }
     
     .loading-title {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     
     .loading-subtitle {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
     
     .loading-symbols {
-        gap: var(--space-sm);
+        gap: var(--space-xs);
     }
     
     .loading-symbols span {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 }
 
@@ -1120,84 +1143,77 @@ body {
 @media (max-width: 480px) {
     :root {
         --space-md: 0.75rem;
-        --space-lg: 1.25rem;
+        --space-lg: 1rem;
+        --space-xl: 2rem;
+        --space-xxl: 2.5rem;
     }
     
     .hero {
-        padding-top: calc(var(--space-xl) + 80px);
+        padding-top: 110px;
     }
     
     .hero-title {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
     
     .hero-subtitle {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
     
     .floating-symbols .symbol {
         font-size: 1rem;
+        opacity: 0.2;
     }
     
     .section-header h2 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+    }
+    
+    .section-header p {
+        font-size: 0.8rem;
     }
     
     .birth-form {
         padding: var(--space-md);
-        border-radius: 12px;
+        border-radius: 10px;
     }
     
     .form-group input {
-        padding: var(--space-sm) var(--space-md);
-        font-size: 16px; /* Previene zoom en iOS */
+        padding: 10px 12px;
+        font-size: 16px !important;
+        border-radius: 8px;
     }
     
     .submit-btn {
-        padding: var(--space-md);
-        font-size: 0.8rem;
+        padding: 12px;
+        font-size: 0.75rem;
         gap: var(--space-sm);
+        border-radius: 8px;
     }
     
     .btn-icon {
-        font-size: 1rem;
-    }
-    
-    /* Big Three compacto */
-    .big-three-grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-sm);
-    }
-    
-    .big-three-item {
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: var(--space-md);
-        text-align: left;
-    }
-    
-    .big-three-item .planet-symbol {
-        font-size: 2rem;
-    }
-    
-    .big-three-item .planet-label {
-        font-size: 0.7rem;
-    }
-    
-    .big-three-item .sign-name {
         font-size: 0.9rem;
     }
     
     .chart-wheel {
-        max-width: 280px;
+        max-width: 260px;
     }
     
     .chart-header h2 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+    }
+    
+    .chart-header p {
+        font-size: 0.8rem;
+    }
+    
+    .big-three-item .planet-symbol {
+        font-size: 1.5rem;
+        min-width: 35px;
     }
     
     .about-content h2 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
     
     .about-card {
@@ -1205,53 +1221,91 @@ body {
     }
     
     .card-icon {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .about-card h3 {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     
     .about-card p {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
     
     /* Notificación de error móvil */
     .error-notification {
-        top: 80px;
+        top: 70px;
         padding: var(--space-sm) var(--space-md);
         border-radius: 8px;
+        width: 90%;
+        left: 5%;
+        transform: translateY(-20px);
+    }
+    
+    .error-notification.show {
+        transform: translateY(0);
     }
     
     .error-icon {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     
     .error-message {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+    }
+    
+    .loading-spinner {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .loading-title {
+        font-size: 1rem;
+    }
+    
+    .loading-subtitle {
+        font-size: 0.8rem;
     }
 }
 
 /* Móviles muy pequeños */
 @media (max-width: 360px) {
     .hero-title {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.8rem;
     }
     
     .logo h1 {
-        font-size: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .logo-icon {
+        width: 30px;
+        height: 30px;
     }
     
     .nav-link {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
     }
     
     .chart-wheel {
-        max-width: 250px;
+        max-width: 220px;
     }
     
     .big-three-item .planet-symbol {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+        min-width: 30px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .submit-btn {
+        font-size: 0.7rem;
     }
 }
 
