@@ -839,130 +839,133 @@ body {
 /* Móviles grandes y tablets pequeñas */
 @media (max-width: 768px) {
     :root {
-        --space-lg: 1.25rem;
-        --space-xl: 2rem;
-        --space-xxl: 2.5rem;
+        --space-xs: 0.2rem;
+        --space-sm: 0.35rem;
+        --space-md: 0.5rem;
+        --space-lg: 0.75rem;
+        --space-xl: 1.25rem;
+        --space-xxl: 1.75rem;
     }
     
     body {
-        font-size: 14px;
+        font-size: 11px;
     }
     
     /* Header móvil */
     .header {
-        padding: var(--space-sm) var(--space-md);
+        padding: 6px 10px;
     }
     
     .header-content {
         flex-direction: column;
-        gap: var(--space-sm);
+        gap: 4px;
     }
     
     .logo {
-        gap: var(--space-sm);
+        gap: 6px;
     }
     
     .logo h1 {
-        font-size: 0.9rem;
-        letter-spacing: 0.08em;
+        font-size: 0.65rem;
+        letter-spacing: 0.05em;
     }
     
     .logo-icon {
-        width: 28px;
-        height: 28px;
+        width: 20px;
+        height: 20px;
     }
     
     .nav {
-        gap: var(--space-xs);
+        gap: 8px;
         flex-wrap: wrap;
         justify-content: center;
     }
     
     .nav-link {
-        font-size: 0.6rem;
-        padding: 2px var(--space-xs);
+        font-size: 0.5rem;
+        padding: 2px 4px;
     }
     
     /* Hero móvil */
     .hero {
         min-height: 100svh;
         min-height: 100dvh;
-        padding: 120px var(--space-md) var(--space-xl);
+        padding: 70px 10px var(--space-lg);
     }
     
     .hero::before {
-        width: 250px;
-        height: 250px;
+        width: 150px;
+        height: 150px;
     }
     
     .hero-title {
-        font-size: 1.3rem;
-        letter-spacing: 0.03em;
-        margin-bottom: var(--space-sm);
+        font-size: 0.95rem;
+        letter-spacing: 0.02em;
+        margin-bottom: 6px;
     }
     
     .hero-subtitle {
-        font-size: 0.8rem;
-        line-height: 1.5;
+        font-size: 0.55rem;
+        line-height: 1.4;
     }
     
     .floating-symbols .symbol {
-        font-size: 1.2rem;
-        opacity: 0.25;
+        font-size: 0.8rem;
+        opacity: 0.15;
     }
     
     /* Calculadora móvil */
     .section-header h2 {
-        font-size: 1.1rem;
-        letter-spacing: 0.03em;
+        font-size: 0.8rem;
+        letter-spacing: 0.02em;
     }
     
     .section-header p {
-        font-size: 0.75rem;
+        font-size: 0.5rem;
     }
     
     .birth-form {
-        padding: var(--space-md);
-        border-radius: 10px;
+        padding: 10px;
+        border-radius: 8px;
     }
     
     .form-grid {
         grid-template-columns: 1fr;
-        gap: var(--space-sm);
-        margin-bottom: var(--space-md);
+        gap: 8px;
+        margin-bottom: 10px;
     }
     
     .form-group label {
-        font-size: 0.65rem;
+        font-size: 0.5rem;
     }
     
     .form-group input {
-        font-size: 14px !important;
-        padding: 10px 12px;
+        font-size: 12px !important;
+        padding: 8px 10px;
     }
     
     .form-hint {
-        font-size: 0.6rem;
+        font-size: 0.45rem;
     }
     
     .submit-btn {
-        padding: 12px var(--space-md);
-        font-size: 0.7rem;
-        letter-spacing: 0.08em;
+        padding: 10px;
+        font-size: 0.55rem;
+        letter-spacing: 0.05em;
     }
     
     /* Carta astral móvil */
     .chart-header h2 {
-        font-size: 1rem;
+        font-size: 0.7rem;
         word-break: break-word;
     }
     
     .chart-header p {
-        font-size: 0.7rem;
+        font-size: 0.5rem;
     }
     
     .chart-grid {
-        gap: var(--space-md);
+        gap: 10px;
     }
     
     .chart-wheel-container {
@@ -972,295 +975,326 @@ body {
     
     .chart-wheel {
         width: 100%;
-        max-width: 280px;
+        max-width: 220px;
     }
     
     /* Big Three móvil */
     .big-three {
-        padding: var(--space-sm);
-        border-radius: 8px;
+        padding: 8px;
+        border-radius: 6px;
     }
     
     .big-three h3 {
-        font-size: 0.75rem;
-        margin-bottom: var(--space-sm);
+        font-size: 0.55rem;
+        margin-bottom: 6px;
     }
     
     .big-three-grid {
         grid-template-columns: 1fr;
-        gap: 6px;
+        gap: 4px;
     }
     
     .big-three-item {
         flex-direction: row;
         justify-content: flex-start;
         text-align: left;
-        padding: 8px 10px;
-        gap: var(--space-sm);
+        padding: 6px 8px;
+        gap: 8px;
     }
     
     .big-three-item .planet-symbol {
-        font-size: 1.3rem;
-        min-width: 30px;
+        font-size: 0.9rem;
+        min-width: 20px;
     }
     
     .big-three-item .planet-label {
-        font-size: 0.55rem;
+        font-size: 0.4rem;
     }
     
     .big-three-item .sign-name {
-        font-size: 0.75rem;
+        font-size: 0.5rem;
     }
     
     /* Lista de planetas móvil */
     .planets-list {
-        padding: var(--space-sm);
-        border-radius: 8px;
+        padding: 8px;
+        border-radius: 6px;
     }
     
     .planets-list h3 {
-        font-size: 0.75rem;
-        margin-bottom: var(--space-sm);
+        font-size: 0.55rem;
+        margin-bottom: 6px;
     }
     
     .planets-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 4px;
+        gap: 3px;
     }
     
     .planet-item {
-        padding: 6px 8px;
+        padding: 4px 6px;
     }
     
     .planet-item .symbol {
-        font-size: 1rem;
-        min-width: 22px;
+        font-size: 0.7rem;
+        min-width: 16px;
     }
     
     .planet-item .name {
-        font-size: 0.55rem;
+        font-size: 0.4rem;
     }
     
     .planet-item .position {
-        font-size: 0.65rem;
+        font-size: 0.45rem;
     }
     
     /* Interpretación móvil */
     .interpretation-section h3 {
-        font-size: 0.9rem;
+        font-size: 0.65rem;
     }
     
     .interpretation-content {
         grid-template-columns: 1fr;
-        gap: var(--space-sm);
+        gap: 6px;
     }
     
     .interpretation-card {
-        padding: var(--space-sm);
-        border-radius: 8px;
+        padding: 8px;
+        border-radius: 6px;
     }
     
     .interpretation-card h4 {
-        font-size: 0.75rem;
+        font-size: 0.55rem;
     }
     
     .interpretation-card p {
-        font-size: 0.7rem;
-        line-height: 1.5;
+        font-size: 0.5rem;
+        line-height: 1.4;
     }
     
     /* About móvil */
     .about-content h2 {
-        font-size: 1.1rem;
+        font-size: 0.8rem;
     }
     
     .about-grid {
         grid-template-columns: 1fr 1fr;
-        gap: var(--space-sm);
+        gap: 6px;
     }
     
     .about-card {
-        padding: var(--space-sm);
-        border-radius: 8px;
+        padding: 8px;
+        border-radius: 6px;
     }
     
     .card-icon {
-        font-size: 1.5rem;
-        margin-bottom: var(--space-xs);
+        font-size: 1rem;
+        margin-bottom: 2px;
     }
     
     .about-card h3 {
-        font-size: 0.75rem;
-        margin-bottom: var(--space-xs);
+        font-size: 0.5rem;
+        margin-bottom: 2px;
     }
     
     .about-card p {
-        font-size: 0.65rem;
+        font-size: 0.45rem;
     }
     
     /* Footer móvil */
     .footer {
-        padding: var(--space-md) var(--space-sm);
+        padding: 10px 8px;
     }
     
     .footer-text {
-        font-size: 0.75rem;
-        letter-spacing: 0.1em;
+        font-size: 0.55rem;
+        letter-spacing: 0.08em;
     }
     
     .footer-subtitle {
-        font-size: 0.65rem;
+        font-size: 0.45rem;
     }
     
     /* Loading móvil */
     .loading-content {
-        padding: var(--space-sm);
-        width: 90%;
+        padding: 10px;
+        width: 85%;
     }
     
     .loading-spinner {
-        width: 50px;
-        height: 50px;
-        margin-bottom: var(--space-md);
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
     }
     
     .loading-title {
-        font-size: 0.9rem;
+        font-size: 0.65rem;
     }
     
     .loading-subtitle {
-        font-size: 0.7rem;
+        font-size: 0.5rem;
     }
     
     .loading-symbols {
-        gap: 4px;
+        gap: 3px;
     }
     
     .loading-symbols span {
-        font-size: 0.85rem;
+        font-size: 0.6rem;
+    }
+    
+    /* Coordenadas */
+    .coords-info {
+        font-size: 0.45rem;
     }
 }
 
 /* Móviles pequeños */
 @media (max-width: 480px) {
     :root {
-        --space-sm: 0.4rem;
-        --space-md: 0.6rem;
-        --space-lg: 0.9rem;
-        --space-xl: 1.5rem;
-        --space-xxl: 2rem;
+        --space-xs: 0.15rem;
+        --space-sm: 0.25rem;
+        --space-md: 0.4rem;
+        --space-lg: 0.6rem;
+        --space-xl: 1rem;
+        --space-xxl: 1.25rem;
     }
     
     body {
-        font-size: 13px;
+        font-size: 10px;
     }
     
     .hero {
-        padding-top: 90px;
+        padding-top: 55px;
     }
     
     .hero-title {
-        font-size: 1.1rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 0.7rem;
-    }
-    
-    .floating-symbols .symbol {
-        font-size: 0.9rem;
-        opacity: 0.15;
-    }
-    
-    .section-header h2 {
-        font-size: 0.95rem;
-    }
-    
-    .section-header p {
-        font-size: 0.65rem;
-    }
-    
-    .form-group input {
-        padding: 8px 10px;
-        font-size: 14px !important;
-        border-radius: 6px;
-    }
-    
-    .submit-btn {
-        padding: 10px;
-        font-size: 0.65rem;
-        gap: 6px;
-        border-radius: 6px;
-    }
-    
-    .btn-icon {
         font-size: 0.8rem;
     }
     
-    .chart-wheel {
-        max-width: 240px;
+    .hero-subtitle {
+        font-size: 0.48rem;
     }
     
-    .chart-header h2 {
-        font-size: 0.85rem;
+    .floating-symbols .symbol {
+        font-size: 0.65rem;
+        opacity: 0.1;
     }
     
-    .chart-header p {
+    .section-header h2 {
+        font-size: 0.65rem;
+    }
+    
+    .section-header p {
+        font-size: 0.42rem;
+    }
+    
+    .form-group label {
+        font-size: 0.42rem;
+    }
+    
+    .form-group input {
+        padding: 6px 8px;
+        font-size: 11px !important;
+        border-radius: 4px;
+    }
+    
+    .form-hint {
+        font-size: 0.38rem;
+    }
+    
+    .submit-btn {
+        padding: 8px;
+        font-size: 0.48rem;
+        gap: 4px;
+        border-radius: 4px;
+    }
+    
+    .btn-icon {
         font-size: 0.6rem;
     }
     
+    .chart-wheel {
+        max-width: 180px;
+    }
+    
+    .chart-header h2 {
+        font-size: 0.58rem;
+    }
+    
+    .chart-header p {
+        font-size: 0.42rem;
+    }
+    
+    .big-three h3 {
+        font-size: 0.45rem;
+    }
+    
     .big-three-item .planet-symbol {
-        font-size: 1.1rem;
-        min-width: 25px;
+        font-size: 0.75rem;
+        min-width: 16px;
+    }
+    
+    .big-three-item .planet-label {
+        font-size: 0.35rem;
     }
     
     .big-three-item .sign-name {
-        font-size: 0.65rem;
+        font-size: 0.42rem;
+    }
+    
+    .planets-list h3 {
+        font-size: 0.45rem;
     }
     
     .planet-item .symbol {
-        font-size: 0.85rem;
+        font-size: 0.6rem;
+        min-width: 14px;
     }
     
     .planet-item .name {
-        font-size: 0.5rem;
+        font-size: 0.35rem;
     }
     
     .planet-item .position {
-        font-size: 0.55rem;
+        font-size: 0.38rem;
     }
     
-    .about-content h2 {
-        font-size: 0.95rem;
-    }
-    
-    .card-icon {
-        font-size: 1.3rem;
-    }
-    
-    .about-card h3 {
-        font-size: 0.65rem;
-    }
-    
-    .about-card p {
+    .interpretation-section h3 {
         font-size: 0.55rem;
     }
     
     .interpretation-card h4 {
-        font-size: 0.65rem;
+        font-size: 0.45rem;
     }
     
     .interpretation-card p {
-        font-size: 0.6rem;
+        font-size: 0.42rem;
+    }
+    
+    .about-content h2 {
+        font-size: 0.65rem;
+    }
+    
+    .card-icon {
+        font-size: 0.85rem;
+    }
+    
+    .about-card h3 {
+        font-size: 0.42rem;
+    }
+    
+    .about-card p {
+        font-size: 0.38rem;
     }
     
     /* Notificación de error móvil */
     .error-notification {
-        top: 60px;
-        padding: 6px 10px;
-        border-radius: 6px;
-        width: 92%;
-        left: 4%;
+        top: 50px;
+        padding: 5px 8px;
+        border-radius: 4px;
+        width: 94%;
+        left: 3%;
         transform: translateY(-20px);
     }
     
@@ -1269,78 +1303,112 @@ body {
     }
     
     .error-icon {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
     
     .error-message {
-        font-size: 0.65rem;
+        font-size: 0.5rem;
     }
     
     .loading-spinner {
-        width: 45px;
-        height: 45px;
+        width: 35px;
+        height: 35px;
     }
     
     .loading-title {
-        font-size: 0.8rem;
+        font-size: 0.55rem;
     }
     
     .loading-subtitle {
-        font-size: 0.65rem;
+        font-size: 0.45rem;
+    }
+    
+    .loading-symbols span {
+        font-size: 0.5rem;
     }
     
     .footer-text {
-        font-size: 0.65rem;
+        font-size: 0.48rem;
     }
     
     .footer-subtitle {
+        font-size: 0.4rem;
+    }
+    
+    .coords-info {
+        font-size: 0.38rem;
+    }
+    
+    .logo h1 {
         font-size: 0.55rem;
+    }
+    
+    .logo-icon {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .nav-link {
+        font-size: 0.42rem;
     }
 }
 
 /* Móviles muy pequeños */
 @media (max-width: 360px) {
     body {
-        font-size: 12px;
+        font-size: 9px;
+    }
+    
+    .hero {
+        padding-top: 50px;
     }
     
     .hero-title {
-        font-size: 1rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 0.6rem;
-    }
-    
-    .logo h1 {
         font-size: 0.7rem;
     }
     
+    .hero-subtitle {
+        font-size: 0.4rem;
+    }
+    
+    .logo h1 {
+        font-size: 0.48rem;
+    }
+    
     .logo-icon {
-        width: 22px;
-        height: 22px;
+        width: 14px;
+        height: 14px;
     }
     
     .nav-link {
-        font-size: 0.5rem;
+        font-size: 0.38rem;
     }
     
     .chart-wheel {
-        max-width: 200px;
+        max-width: 150px;
     }
     
     .big-three-item .planet-symbol {
-        font-size: 1rem;
-        min-width: 22px;
+        font-size: 0.65rem;
+        min-width: 14px;
     }
     
     .section-header h2 {
-        font-size: 0.85rem;
+        font-size: 0.55rem;
+    }
+    
+    .section-header p {
+        font-size: 0.38rem;
     }
     
     .submit-btn {
-        font-size: 0.6rem;
-        padding: 8px;
+        font-size: 0.42rem;
+        padding: 6px;
+    }
+    
+    .form-group input {
+        font-size: 10px !important;
+        padding: 5px 6px;
     }
     
     .about-grid {
@@ -1349,6 +1417,14 @@ body {
     
     .planets-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .interpretation-card p {
+        font-size: 0.38rem;
+    }
+    
+    .about-card p {
+        font-size: 0.35rem;
     }
 }
 
