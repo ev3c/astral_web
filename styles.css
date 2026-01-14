@@ -787,10 +787,16 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN - Mobile First Optimizations
    ═══════════════════════════════════════════════════════════════════════ */
 
+/* Tablets y pantallas medianas */
 @media (max-width: 1024px) {
+    :root {
+        --space-xl: 3rem;
+        --space-xxl: 4rem;
+    }
+    
     .chart-grid {
         grid-template-columns: 1fr;
     }
@@ -799,58 +805,525 @@ body {
         max-width: 500px;
         margin: 0 auto;
     }
-}
-
-@media (max-width: 768px) {
-    body {
-        font-size: 16px;
-    }
-    
-    .header-content {
-        flex-direction: column;
-        gap: var(--space-md);
-    }
-    
-    .nav {
-        gap: var(--space-md);
-    }
-    
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .big-three-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .planets-grid {
-        grid-template-columns: 1fr;
-    }
     
     .interpretation-content {
         grid-template-columns: 1fr;
     }
-    
-    .hero-title {
-        font-size: 2rem;
-    }
-    
-    .symbol {
-        font-size: 1.5rem;
-    }
 }
 
-@media (max-width: 480px) {
+/* Móviles grandes y tablets pequeñas */
+@media (max-width: 768px) {
+    :root {
+        --space-lg: 1.5rem;
+        --space-xl: 2.5rem;
+        --space-xxl: 3rem;
+    }
+    
+    body {
+        font-size: 16px;
+    }
+    
+    /* Header móvil */
+    .header {
+        padding: var(--space-sm) var(--space-md);
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+    
+    .logo {
+        gap: var(--space-sm);
+    }
+    
+    .logo h1 {
+        font-size: 1.2rem;
+        letter-spacing: 0.15em;
+    }
+    
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .nav {
+        gap: var(--space-md);
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-link {
+        font-size: 0.75rem;
+        padding: var(--space-xs) 0;
+    }
+    
+    /* Hero móvil */
+    .hero {
+        min-height: 100svh; /* Usa svh para móviles */
+        padding: calc(var(--space-xxl) + 60px) var(--space-md) var(--space-xl);
+    }
+    
+    .hero::before {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .hero-title {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        letter-spacing: 0.05em;
+        margin-bottom: var(--space-md);
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        line-height: 1.7;
+        padding: 0 var(--space-sm);
+    }
+    
+    .floating-symbols .symbol {
+        font-size: 1.3rem;
+        opacity: 0.3;
+    }
+    
+    /* Calculadora móvil */
+    .calculator-section {
+        padding: var(--space-xl) var(--space-md);
+    }
+    
+    .section-header h2 {
+        font-size: 1.6rem;
+        letter-spacing: 0.05em;
+    }
+    
+    .section-header p {
+        font-size: 0.95rem;
+        padding: 0 var(--space-sm);
+    }
+    
     .birth-form {
         padding: var(--space-lg);
+        border-radius: 15px;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+        margin-bottom: var(--space-lg);
+    }
+    
+    .form-group label {
+        font-size: 0.8rem;
+    }
+    
+    .form-group input {
+        font-size: 1rem;
+        padding: var(--space-md);
+    }
+    
+    .form-hint {
+        font-size: 0.75rem;
     }
     
     .submit-btn {
         padding: var(--space-md) var(--space-lg);
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
+    }
+    
+    /* Carta astral móvil */
+    .chart-section {
+        padding: var(--space-xl) var(--space-md);
+    }
+    
+    .chart-header h2 {
+        font-size: 1.4rem;
+    }
+    
+    .chart-header p {
+        font-size: 0.9rem;
+    }
+    
+    .chart-wheel-container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .chart-wheel {
+        max-width: 350px;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    /* Big Three móvil */
+    .big-three {
+        padding: var(--space-md);
+        border-radius: 12px;
+    }
+    
+    .big-three h3 {
+        font-size: 1rem;
+        margin-bottom: var(--space-md);
+    }
+    
+    .big-three-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-sm);
+    }
+    
+    .big-three-item {
+        padding: var(--space-sm);
+    }
+    
+    .big-three-item .planet-symbol {
+        font-size: 1.5rem;
+    }
+    
+    .big-three-item .planet-label {
+        font-size: 0.65rem;
+    }
+    
+    .big-three-item .sign-name {
+        font-size: 0.8rem;
+    }
+    
+    /* Lista de planetas móvil */
+    .planets-list {
+        padding: var(--space-md);
+        border-radius: 12px;
+    }
+    
+    .planets-list h3 {
+        font-size: 1rem;
+        margin-bottom: var(--space-md);
+    }
+    
+    .planets-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+    
+    .planet-item {
+        padding: var(--space-sm) var(--space-md);
+    }
+    
+    .planet-item .symbol {
+        font-size: 1.3rem;
+        min-width: 25px;
+    }
+    
+    .planet-item .name {
+        font-size: 0.75rem;
+    }
+    
+    .planet-item .position {
+        font-size: 0.85rem;
+    }
+    
+    /* Interpretación móvil */
+    .interpretation-section h3 {
+        font-size: 1.2rem;
+    }
+    
+    .interpretation-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .interpretation-card {
+        padding: var(--space-md);
+        border-radius: 12px;
+    }
+    
+    .interpretation-card h4 {
+        font-size: 1rem;
+    }
+    
+    .interpretation-card p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+    
+    /* About móvil */
+    .about-section {
+        padding: var(--space-xl) var(--space-md);
+    }
+    
+    .about-content h2 {
+        font-size: 1.6rem;
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
     }
     
     .about-card {
         padding: var(--space-lg);
+        border-radius: 12px;
+    }
+    
+    .card-icon {
+        font-size: 2.5rem;
+    }
+    
+    .about-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .about-card p {
+        font-size: 0.9rem;
+    }
+    
+    /* Footer móvil */
+    .footer {
+        padding: var(--space-lg) var(--space-md);
+    }
+    
+    .footer-text {
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+    }
+    
+    .footer-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    /* Loading móvil */
+    .loading-content {
+        padding: var(--space-lg);
+    }
+    
+    .loading-spinner {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .loading-title {
+        font-size: 1.2rem;
+    }
+    
+    .loading-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .loading-symbols {
+        gap: var(--space-sm);
+    }
+    
+    .loading-symbols span {
+        font-size: 1.2rem;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    :root {
+        --space-md: 0.75rem;
+        --space-lg: 1.25rem;
+    }
+    
+    .hero {
+        padding-top: calc(var(--space-xl) + 80px);
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .floating-symbols .symbol {
+        font-size: 1rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.4rem;
+    }
+    
+    .birth-form {
+        padding: var(--space-md);
+        border-radius: 12px;
+    }
+    
+    .form-group input {
+        padding: var(--space-sm) var(--space-md);
+        font-size: 16px; /* Previene zoom en iOS */
+    }
+    
+    .submit-btn {
+        padding: var(--space-md);
+        font-size: 0.8rem;
+        gap: var(--space-sm);
+    }
+    
+    .btn-icon {
+        font-size: 1rem;
+    }
+    
+    /* Big Three compacto */
+    .big-three-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+    
+    .big-three-item {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: var(--space-md);
+        text-align: left;
+    }
+    
+    .big-three-item .planet-symbol {
+        font-size: 2rem;
+    }
+    
+    .big-three-item .planet-label {
+        font-size: 0.7rem;
+    }
+    
+    .big-three-item .sign-name {
+        font-size: 0.9rem;
+    }
+    
+    .chart-wheel {
+        max-width: 280px;
+    }
+    
+    .chart-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .about-content h2 {
+        font-size: 1.4rem;
+    }
+    
+    .about-card {
+        padding: var(--space-md);
+    }
+    
+    .card-icon {
+        font-size: 2rem;
+    }
+    
+    .about-card h3 {
+        font-size: 1rem;
+    }
+    
+    .about-card p {
+        font-size: 0.85rem;
+    }
+    
+    /* Notificación de error móvil */
+    .error-notification {
+        top: 80px;
+        padding: var(--space-sm) var(--space-md);
+        border-radius: 8px;
+    }
+    
+    .error-icon {
+        font-size: 1.2rem;
+    }
+    
+    .error-message {
+        font-size: 0.85rem;
+    }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.4rem;
+    }
+    
+    .logo h1 {
+        font-size: 1rem;
+    }
+    
+    .nav-link {
+        font-size: 0.7rem;
+    }
+    
+    .chart-wheel {
+        max-width: 250px;
+    }
+    
+    .big-three-item .planet-symbol {
+        font-size: 1.5rem;
+    }
+}
+
+/* Orientación horizontal en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: var(--space-xl) var(--space-md);
+    }
+    
+    .hero::before {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .floating-symbols {
+        display: none;
+    }
+}
+
+/* Mejoras de accesibilidad táctil */
+@media (hover: none) and (pointer: coarse) {
+    .nav-link,
+    .submit-btn,
+    .big-three-item,
+    .planet-item,
+    .interpretation-card,
+    .about-card {
+        /* Área táctil mínima de 44px */
+        min-height: 44px;
+    }
+    
+    .submit-btn:hover {
+        transform: none;
+    }
+    
+    .about-card:hover {
+        transform: none;
+    }
+    
+    .interpretation-card:hover {
+        transform: none;
+    }
+    
+    .big-three-item:hover {
+        transform: none;
+    }
+    
+    /* Efecto activo en lugar de hover */
+    .submit-btn:active {
+        transform: scale(0.98);
+    }
+    
+    .about-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Safe area para dispositivos con notch */
+@supports (padding: max(0px)) {
+    .header {
+        padding-left: max(var(--space-md), env(safe-area-inset-left));
+        padding-right: max(var(--space-md), env(safe-area-inset-right));
+        padding-top: max(var(--space-md), env(safe-area-inset-top));
+    }
+    
+    .footer {
+        padding-bottom: max(var(--space-lg), env(safe-area-inset-bottom));
+    }
+    
+    .loading-overlay {
+        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     }
 }
 
@@ -1052,10 +1525,19 @@ body {
     font-size: 0.85rem;
     color: var(--color-gold-soft);
     opacity: 0.8;
+    display: block;
+    margin-top: var(--space-xs);
 }
 
 .chart-header p {
     line-height: 1.8;
+    word-break: break-word;
+}
+
+@media (max-width: 768px) {
+    .coords-info {
+        font-size: 0.75rem;
+    }
 }
 
 /* Animación de entrada para items de planetas */
