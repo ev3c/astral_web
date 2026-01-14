@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astral Chart - Tu Carta Natal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+    
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 100 100" width="50" height="50">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="1"/>
+                    <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                    <circle cx="50" cy="50" r="8" fill="currentColor"/>
+                    <path d="M50 5 L50 15 M50 85 L50 95 M5 50 L15 50 M85 50 L95 50" stroke="currentColor" stroke-width="1"/>
+                </svg>
+                <h1>Astral Chart</h1>
+            </div>
+            <nav class="nav">
+                <a href="#calculator" class="nav-link">Calcular</a>
+                <a href="#about" class="nav-link">Sobre la Astrología</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="hero-title">Descubre tu Mapa Celestial</h2>
+                <p class="hero-subtitle">La carta astral es un espejo del cosmos en el momento de tu nacimiento. Cada planeta, cada signo, cuenta tu historia única.</p>
+            </div>
+            <div class="floating-symbols">
+                <span class="symbol" style="--delay: 0s; --x: 10%; --y: 20%;">☉</span>
+                <span class="symbol" style="--delay: 0.5s; --x: 85%; --y: 15%;">☽</span>
+                <span class="symbol" style="--delay: 1s; --x: 15%; --y: 70%;">♀</span>
+                <span class="symbol" style="--delay: 1.5s; --x: 90%; --y: 65%;">♂</span>
+                <span class="symbol" style="--delay: 2s; --x: 50%; --y: 10%;">♃</span>
+                <span class="symbol" style="--delay: 2.5s; --x: 75%; --y: 80%;">♄</span>
+            </div>
+        </section>
+
+        <section id="calculator" class="calculator-section">
+            <div class="section-header">
+                <h2>Calcula tu Carta Natal</h2>
+                <p>Ingresa tus datos de nacimiento para descubrir la posición de los astros en tu momento único</p>
+            </div>
+            
+            <form id="birth-form" class="birth-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Tu Nombre</label>
+                        <input type="text" id="name" name="name" placeholder="Escribe tu nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="birth-date">Fecha de Nacimiento</label>
+                        <input type="date" id="birth-date" name="birth-date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="birth-time">Hora de Nacimiento</label>
+                        <input type="time" id="birth-time" name="birth-time" required>
+                        <span class="form-hint">Si no la conoces, usa 12:00</span>
+                    </div>
+                    
+                    <div class="form-group form-group-full">
+                        <label for="birth-place">Lugar de Nacimiento</label>
+                        <input type="text" id="birth-place" name="birth-place" placeholder="Ciudad, País" required>
+                        <span class="form-hint">Ej: Madrid, España</span>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Generar Carta Astral</span>
+                    <span class="btn-icon">✦</span>
+                </button>
+            </form>
+        </section>
+
+        <section id="chart-result" class="chart-section hidden">
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h2>Carta Natal de <span id="chart-name"></span></h2>
+                    <p id="chart-info"></p>
+                </div>
+                
+                <div class="chart-grid">
+                    <div class="chart-wheel-container">
+                        <svg id="chart-wheel" viewBox="0 0 600 600" class="chart-wheel"></svg>
+                    </div>
+                    
+                    <div class="chart-details">
+                        <div class="big-three">
+                            <h3>Los Tres Grandes</h3>
+                            <div class="big-three-grid">
+                                <div class="big-three-item sun">
+                                    <span class="planet-symbol">☉</span>
+                                    <span class="planet-label">Sol</span>
+                                    <span id="sun-sign" class="sign-name"></span>
+                                </div>
+                                <div class="big-three-item moon">
+                                    <span class="planet-symbol">☽</span>
+                                    <span class="planet-label">Luna</span>
+                                    <span id="moon-sign" class="sign-name"></span>
+                                </div>
+                                <div class="big-three-item rising">
+                                    <span class="planet-symbol">↑</span>
+                                    <span class="planet-label">Ascendente</span>
+                                    <span id="rising-sign" class="sign-name"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="planets-list">
+                            <h3>Posiciones Planetarias</h3>
+                            <div id="planets-container" class="planets-grid"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="interpretation-section">
+                    <h3>Tu Interpretación Personal</h3>
+                    <div id="interpretation" class="interpretation-content"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <h2>Sobre la Astrología</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="card-icon">☉</div>
+                        <h3>El Sol</h3>
+                        <p>Representa tu esencia, tu ego y tu identidad fundamental. Es el núcleo de tu ser.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">☽</div>
+                        <h3>La Luna</h3>
+                        <p>Gobierna tus emociones, instintos y el mundo interior. Es tu respuesta emocional a la vida.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">↑</div>
+                        <h3>El Ascendente</h3>
+                        <p>Tu máscara social y cómo te presentas al mundo. Es la primera impresión que das.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">♀</div>
+                        <h3>Venus</h3>
+                        <p>El planeta del amor, la belleza y los valores. Indica cómo amas y qué valoras.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">♂</div>
+                        <h3>Marte</h3>
+                        <p>Representa la acción, la energía y la pasión. Es tu impulso y determinación.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">☿</div>
+                        <h3>Mercurio</h3>
+                        <p>Gobierna la comunicación, el pensamiento y el aprendizaje. Es tu mente consciente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">✦ Astral Chart ✦</p>
+            <p class="footer-subtitle">Explorando los misterios del cosmos</p>
+        </div>
+    </footer>
+
+    <script src="astrology.js"></script>
+    <script src="chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
